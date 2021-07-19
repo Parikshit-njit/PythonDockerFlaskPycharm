@@ -6,3 +6,6 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 
 # SQL Data Screenshot
 ![pycharm_data_query](screenshots/query.png)
+
+# Jinja Template Rendering Screenshot
+![jinja_render](screenshots/jinja.png)
