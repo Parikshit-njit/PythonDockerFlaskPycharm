@@ -44,6 +44,7 @@ def record_view(city_id):
 
 @app.route('/edit/<int:city_id>', methods=['GET'])
 def form_edit_get(city_id):
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', city_id)
     result = cursor.fetchall()
@@ -52,6 +53,7 @@ def form_edit_get(city_id):
 
 @app.route('/edit/<int:city_id>', methods=['POST'])
 def form_update_post(city_id):
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('fldName'), request.form.get('fldLat'), request.form.get('fldLong'),
                  request.form.get('fldCountry'), request.form.get('fldAbbreviation'),
@@ -64,11 +66,13 @@ def form_update_post(city_id):
 
 @app.route('/cities/new', methods=['GET'])
 def form_insert_get():
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     return render_template('new.html', title='New City Form')
 
 
 @app.route('/cities/new', methods=['POST'])
 def form_insert_post():
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('fldName'), request.form.get('fldLat'), request.form.get('fldLong'),
                  request.form.get('fldCountry'), request.form.get('fldAbbreviation'),
@@ -80,6 +84,7 @@ def form_insert_post():
 
 @app.route('/delete/<int:city_id>', methods=['POST'])
 def form_delete_post(city_id):
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM tblCitiesImport WHERE id = %s """
     cursor.execute(sql_delete_query, city_id)
@@ -89,6 +94,7 @@ def form_delete_post(city_id):
 
 @app.route('/api/v1/cities', methods=['GET'])
 def api_browse() -> str:
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblCitiesImport')
     result = cursor.fetchall()
@@ -99,6 +105,7 @@ def api_browse() -> str:
 
 @app.route('/api/v1/cities/<int:city_id>', methods=['GET'])
 def api_retrieve(city_id) -> str:
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', city_id)
     result = cursor.fetchall()
@@ -109,6 +116,7 @@ def api_retrieve(city_id) -> str:
 
 @app.route('/api/v1/cities/<int:city_id>', methods=['PUT'])
 def api_edit(city_id) -> str:
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     content = request.json
     inputData = (content['fldName'], content['fldLat'], content['fldLong'],
@@ -123,7 +131,7 @@ def api_edit(city_id) -> str:
 
 @app.route('/api/v1/cities', methods=['POST'])
 def api_add() -> str:
-
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     content = request.json
 
     cursor = mysql.get_db().cursor()
@@ -138,6 +146,7 @@ def api_add() -> str:
 
 @app.route('/api/v1/cities/<int:city_id>', methods=['DELETE'])
 def api_delete(city_id) -> str:
+    app.config['MYSQL_DATABASE_DB'] = 'citiesData'
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM tblCitiesImport WHERE id = %s """
     cursor.execute(sql_delete_query, city_id)
