@@ -7,6 +7,34 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 # SQL Data Screenshot
 ![pycharm_data_query](screenshots/query.png)
 
+<h1>Home Page Postman</h1>
+
+<img src="screenshots/Home Page Postman.png"></img>
+
+<h1>Home Page HTML/Web Page Preview</h1>
+
+<img src="screenshots/Home Page Preview.png"></img>
+
+<h1>New City Page HTML/Web Page Preview</h1>
+
+<img src="screenshots/New City Page Preview.png"></img>
+
+<h1>City JSON Postman</h1>
+
+<img src="screenshots/Per City JSON Postman.png"></img>
+
+<h1>City JSON HTML Page Preview</h1>
+
+<img src="screenshots/Per City JSON Preview.png"></img>
+
+<h1>View By Link Postman</h1>
+
+<img src="screenshots/View By Link Postman.png"></img>
+
+<h1>View By Link HTML Page Preview</h1>
+
+<img src="screenshots/View By Link Preview.png"></img>
+
 <h1>Add City Request Postman</h1>
 
 <img src="screenshots/Add City Request Postman.png"></img>
