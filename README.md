@@ -45,5 +45,5 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 
 <h1> Edit City Result Home Page </h1>
 
-<img src="screenshots/Edited City Result HomePage.png"></img>
+<img src="screenshots/Edited City Result Home Page.png"></img>
 
